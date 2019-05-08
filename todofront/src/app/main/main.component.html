@@ -1,0 +1,19 @@
+<body><ul *ngIf = "status">
+  <li *ngFor=" let tasklist of tasklists; let i = index" (click)="myTasklist(i+1)">
+             {{tasklist.id}}  -  {{tasklist.name}} 
+</ul>
+
+<ul *ngIf ="view">
+<ul *ngIf ="!status">
+	<li *ngFor=" let task of tasks; let i = index" (click)="myTask(taskid, i+1)">
+		     {{task.name}}  -  {{task.status}}
+	</li>
+</ul>
+</ul>
+
+<ul *ngIf ="!view">
+	<li>
+		     {{taskdetail.id}}  -  {{taskdetail.name}}  -  {{taskdetail.status}} - {{taskdetail.created_at}} - {{taskdetail.due_on}}
+	</li>
+</ul>
+</body>
